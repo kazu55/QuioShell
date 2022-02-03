@@ -9,6 +9,8 @@ if tonumber(data) > buildID then
   shell.run("wget https://raw.githubusercontent.com/kazu55/QuioShell/master/QuioShell.lua")
   shell.run("rm buildID.txt")
   shell.run("reboot")
+else
+    shell.run("rm buildID.txt")
 end
 
 print("User?")
@@ -26,7 +28,7 @@ else
 end
 
 while true do
-    write(shell.dir() .. ":~$ ")
+    write(user .. ":~" .. shell.dir() .. "$ ")
     cmd = read()
     shell.run(cmd)
 end
