@@ -1,4 +1,4 @@
-local buildID = 1
+local buildID = 2
 term.clear()
 shell.run("wget https://raw.githubusercontent.com/kazu55/QuioShell/master/buildID.txt")
 local file = fs.open("buildID.txt", "r")
@@ -24,7 +24,7 @@ if fs.exists("/home/" .. user) then
 else
     shell.run("mkdir /home/" .. user)
     shell.run("cd /home/" .. user)
-    print("User creation was successful")
+    print("User creation was successful.")
 end
 
 while true do
