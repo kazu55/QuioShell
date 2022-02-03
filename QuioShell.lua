@@ -19,16 +19,15 @@ term.clear()
 term.setCursorPos(1,1)
 print("QuioShell")
 if fs.exists("/home/" .. user) then
-    shell.run("cd /home/" .. user)
     print("Login was successful.")
 else
     shell.run("mkdir /home/" .. user)
-    shell.run("cd /home/" .. user)
     print("User creation was successful.")
 end
 
 while true do
     write(user .. ":~" .. shell.dir() .. "$ ")
     cmd = read()
+    shell.run("cd /home" .. user)
     shell.run(cmd)
 end
