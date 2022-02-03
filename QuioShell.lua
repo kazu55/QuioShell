@@ -1,4 +1,4 @@
-local buildID = 4
+local buildID = 5
 term.clear()
 shell.run("wget https://raw.githubusercontent.com/kazu55/QuioShell/master/buildID.txt")
 local file = fs.open("buildID.txt", "r")
@@ -30,4 +30,5 @@ while true do
     cmd = read()
     shell.run("cd /home/" .. user)
     shell.run(cmd)
+    shell.run("cd /")
 end
