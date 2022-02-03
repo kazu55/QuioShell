@@ -1,27 +1,13 @@
-local buildID = 0
+local buildID = 1
 term.clear()
+shell.run("wget https://raw.githubusercontent.com/kazu55/QuioShell/master/buildID.txt")
+local file = fs.open("buildID.txt", "r")
+local data = file.readAll()
 
-http.request("https://raw.githubusercontent.com/kazu55/QuioShell/master/buildID.txt")
-
-local requesting = true
-
-while requesting do
-  local event, url, sourceText = os.pullEvent()
-  
-  if event == "http_success" then
-    local respondedText = sourceText.readAll()
-    
-    sourceText.close()
-    requesting = false
-  elseif event == "http_failure" then
-    print("Server didn't respond.")
-    
-    requesting = false
-  end
-end
-if tonumber(sourceText) > buildID then
+if tonumber(data) > buildID then
   print("Updating... Please Wait...")
   shell.run("wget https://raw.githubusercontent.com/kazu55/QuioShell/master/QuioShell.lua")
+  shell.run("rm buildID.txt")
   shell.run("reboot")
 end
 
