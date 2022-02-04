@@ -1,5 +1,5 @@
 while true do
-    if shell.dir() == nil then
+    if shell.dir() == "" then
         write("/:~$ ")
         cmd = read()
         shell.run(cmd)
