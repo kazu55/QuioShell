@@ -1,3 +1,4 @@
+term.clear()
 print("User?")
 user = read()
 print("Password?")
