@@ -15,7 +15,8 @@ passrA = passread.readAll()
 if pass == passrA then
     shell.run("QuioShell.lua")
 else
-    os.reboot()
+    print("Login Failed.")
+    shell.run("reboot")
 end
 
 term.clear()
