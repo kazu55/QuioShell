@@ -7,7 +7,9 @@ local data = file.readAll()
 if tonumber(data) > buildID then
   print("Updating... Please Wait...")
   shell.run("rm /QuioShell.lua")
+  shell.run("rm /update.lua")
   shell.run("wget https://raw.githubusercontent.com/kazu55/QuioShell/master/QuioShell.lua")
+  shell.run("wget https://raw.githubusercontent.com/kazu55/QuioShell/master/update.lua")
   shell.run("rm buildID.txt")
   shell.run("reboot")
 else
