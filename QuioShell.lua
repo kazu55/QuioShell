@@ -1,5 +1,5 @@
 while true do
-    write(user .. ":~" .. shell.dir() .. "$ ")
+    write(shell.dir() .. ":~$ ")
     cmd = read()
     shell.run(cmd)
 end
