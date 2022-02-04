@@ -1,5 +1,5 @@
 print("User?")
-user = read("*")
+user = read()
 term.clear()
 term.setCursorPos(1,1)
 print("QuioShell")
