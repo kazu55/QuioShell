@@ -9,9 +9,11 @@ if tonumber(data) > buildID then
   shell.run("rm /Quiologin.lua")
   shell.run("rm /QuioShell.lua")
   shell.run("rm /update.lua")
+  shell.run("rm /startup.lua")
   shell.run("wget https://raw.githubusercontent.com/kazu55/QuioShell/master/Quiologin.lua")
   shell.run("wget https://raw.githubusercontent.com/kazu55/QuioShell/master/update.lua")
   shell.run("wget https://raw.githubusercontent.com/kazu55/QuioShell/master/QuioShell.lua")
+  shell.run("wget https://raw.githubusercontent.com/kazu55/QuioShell/master/startup.lua")
   shell.run("rm buildID.txt")
   shell.run("reboot")
 else
