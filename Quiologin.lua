@@ -1,8 +1,8 @@
 term.clear()
 term.setCursorPos(1,1)
-print("User?")
+write("User: ")
 user = read()
-print("Password?")
+write("Password: ")
 pass = read("*")
 if not fs.exists("/home/." .. user .. ".pass.xyz") then
     shell.run("mkdir /home/." .. user)
@@ -17,7 +17,7 @@ passrA = passread.readAll()
 if pass == passrA then
     term.clear()
     term.setCursorPos(1,1)
-    print("QuioShell")
+    print("Login successful.")
     shell.run("QuioShell.lua")
 else
     print("Login Failed.")
