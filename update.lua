@@ -1,4 +1,4 @@
-local buildID = 2670
+local buildID = 3000
 term.clear()
 shell.run("wget https://raw.githubusercontent.com/kazu55/QuioShell/master/buildID.txt")
 local file = fs.open("buildID.txt", "r")
