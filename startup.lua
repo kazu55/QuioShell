@@ -1,13 +1,18 @@
 os.fadeout = function(time)
   term.setBackgroundColor(colors.white)
+  term.clear()
   sleep(time)
-  term.setBackgroundColor(colors.lightblue)
+  term.setBackgroundColor(colors.lightBlue)
+  term.clear()
   sleep(time)
   term.setBackgroundColor(colors.lightGray)
+  term.clear()
   sleep(time)
-  term.setBackgroundColor(colors.glay)
+  term.setBackgroundColor(colors.gray)
+  term.clear()
   sleep(time)
   term.setBackgroundColor(colors.black)
+  term.clear()
   sleep(time)
 end
 
@@ -21,12 +26,13 @@ end
 local reboot = os.reboot
 
 os.reboot = function()
-  term.clear()
   term.setBackgroundColor(colors.white)
+  term.setTextColor(colors.black)
+  term.clear()
   term.setCursorPos(1, 2)
   centerText("Shutting down")
   sleep(1)
-  os.fadeout(0.15)
+  os.fadeout(0.05)
   reboot()
   while true do
     coroutine.yield()
@@ -36,12 +42,13 @@ end
 local shutdown = os.shutdown
 
 os.shutdown = function()
+  term.setBackgroundColor(colors.white)
+  term.setTextColor(colors.black)
   term.clear()
   term.setCursorPos(1, 2)
-  term.setBackgroundColor(colors.white)
   centerText("Shutting down")
   sleep(1)
-  os.fadeout(0.15)
+  os.fadeout(0.05)
   shutdown()
   while true do
     coroutine.yield()
