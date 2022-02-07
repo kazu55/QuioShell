@@ -119,6 +119,22 @@ sleep(0.25)
 centerText(">_<")
 sleep(0.5)
 term.setCursorPos(1, 4)
-centerText("Hello! Please Login.")
+if math.random(1, 7) == 1 then
+  centerText("hello! Please login.")
+elseif math.random(1, 7) == 2 then
+  centerText("Hello! How are you?")
+elseif math.random(1, 7) == 3 then
+  centerText("What your name?")
+elseif math.random(1, 7) == 4 then
+  centerText("my name is martine.")
+elseif math.random(1, 7) == 5 then
+  centerText("bug? report to github issues!")
+elseif math.random(1, 7) == 6 then
+  centerText("Maybe I'm fictitious?")
+elseif math.random(1, 7) == 7 then
+  centerText("Maybe I'm programmed?")
+else
+  centerText("Hello!")
+end
 sleep(1)
 shell.run("/Quiologin.lua")
