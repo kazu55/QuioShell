@@ -1,0 +1,7 @@
+Hello! Please login.
+Hello! How are you?
+What your name?
+my name is martine.
+bug? report to github issues!
+Maybe I'm fictitious?
+Maybe I'm programmed?
