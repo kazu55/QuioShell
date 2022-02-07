@@ -118,22 +118,30 @@ centerText("\7_\7")
 sleep(0.25)
 centerText(">_<")
 sleep(0.5)
-term.setCursorPos(1, 4)
+term.setCursorPos(1, 1)
 if math.random(1, 7) == 1 then
+  term.setCursorPos(1, 1)
   centerText("hello! Please login.")
 elseif math.random(1, 7) == 2 then
+  term.setCursorPos(1, 1)
   centerText("Hello! How are you?")
 elseif math.random(1, 7) == 3 then
+  term.setCursorPos(1, 1)
   centerText("What your name?")
 elseif math.random(1, 7) == 4 then
+  term.setCursorPos(1, 1)
   centerText("my name is martine.")
 elseif math.random(1, 7) == 5 then
+  term.setCursorPos(1, 1)
   centerText("bug? report to github issues!")
 elseif math.random(1, 7) == 6 then
+  term.setCursorPos(1, 1)
   centerText("Maybe I'm fictitious?")
 elseif math.random(1, 7) == 7 then
+  term.setCursorPos(1, 1)
   centerText("Maybe I'm programmed?")
 else
+  term.setCursorPos(1, 1)
   centerText("Hello!")
 end
 sleep(1)
