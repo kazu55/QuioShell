@@ -26,11 +26,16 @@ end
 local reboot = os.reboot
 
 os.reboot = function()
+  term.clear()
+  term.setCursorPos(1, 1)
+  print("[WARN] The program will be killed by restart.")
+  print("[INFO] 10s please wait...")
+  sleep(10)
   term.setBackgroundColor(colors.white)
   term.setTextColor(colors.black)
   term.clear()
   term.setCursorPos(1, 2)
-  centerText("Shutting down")
+  centerText("Restarting...")
   sleep(1)
   os.fadeout(0.1)
   term.setTextColor(colors.white)
@@ -63,12 +68,19 @@ end
 local shutdown = os.shutdown
 
 os.shutdown = function()
+  term.clear()
+  term.setCursorPos(1, 1)
+  print("[WARN] The program will be killed by shutdown.")
+  print("[INFO] 10s please wait...")
+  sleep(10)
   term.setBackgroundColor(colors.white)
   term.setTextColor(colors.black)
   term.clear()
   term.setCursorPos(1, 2)
   centerText("Shutting down")
   sleep(1)
+  term.clear()
+  term.setCursorPos(1, 2)
   os.fadeout(0.1)
   term.setTextColor(colors.white)
   centerText(">_<")
@@ -145,4 +157,6 @@ else
   centerText("Hello!")
 end
 sleep(1)
-shell.run("/Quiologin.lua")
+while true do
+  shell.run("/QuioLogin.lua")
+end
