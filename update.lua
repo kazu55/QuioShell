@@ -1,4 +1,4 @@
-local buildID = 4056
+local buildID = 4075
 term.clear()
 shell.run("wget https://raw.githubusercontent.com/kazu55/QuioShell/master/buildID.txt")
 local file = fs.open("buildID.txt", "r")
@@ -11,10 +11,12 @@ if tonumber(data) > buildID then
   shell.run("rm /update.lua")
   shell.run("rm /startup.lua")
   shell.run("rm /hometab.lua")
+  shell.run("rm /iconlauncher.lua")
   shell.run("wget https://raw.githubusercontent.com/kazu55/QuioShell/master/Quiologin.lua")
   shell.run("wget https://raw.githubusercontent.com/kazu55/QuioShell/master/update.lua")
   shell.run("wget https://raw.githubusercontent.com/kazu55/QuioShell/master/QuioShell.lua")
   shell.run("wget https://raw.githubusercontent.com/kazu55/QuioShell/master/startup.lua")
+  shell.run("wget https://raw.githubusercontent.com/kazu55/QuioShell/master/iconlauncher.lua")
   shell.run("rm buildID.txt")
   shell.run("reboot")
 else
