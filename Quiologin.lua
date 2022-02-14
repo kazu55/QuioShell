@@ -1,9 +1,16 @@
+os.fadeIn(0.05)
+term.setTextColor(colors.black)
 term.clear()
 term.setCursorPos(1,1)
 write("User: ")
 user = read()
 write("Password: ")
-pass = read("*")
+pass = read("\7")
+os.fadeOut(0.05)
+term.setTextColor(colors.white)
+term.clear()
+term.setCursorPos(1,1)
+
 if not fs.exists("/home/." .. user .. ".pass.xyz") then
     shell.run("mkdir /home/." .. user)
     passwrite = fs.open("/home/." .. user .. ".pass.xyz", "w")
