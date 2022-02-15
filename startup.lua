@@ -136,6 +136,7 @@ if fs.exists("/home") then
   term.clear()
   while true do
     shell.run("/Quiologin.lua")
+    sleep(1)
   end
 else
   term.clear()

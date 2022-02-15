@@ -21,6 +21,7 @@ if not fs.exists("/home/." .. user .. ".pass.xyz") then
     passwrite = fs.open("/home/." .. user .. ".pass.xyz", "w")
     passwrite.write(pass)
     passwrite.close()
+    os.setuser(user)
     shell.run("iconlauncher.lua")
 end
 
@@ -29,6 +30,7 @@ passrA = passread.readAll()
 if pass == passrA then
     term.clear()
     term.setCursorPos(1,1)
+    os.setuser(user)
     shell.run("iconlauncher.lua")
 else
     print("Wrong.")
@@ -40,5 +42,6 @@ term.clear()
 term.setCursorPos(1,1)
 if fs.exists("/home/." .. user) then
     print("Login was successful.")
+    os.setuser(user)
     shell.run("/iconlauncher.lua")
 end
