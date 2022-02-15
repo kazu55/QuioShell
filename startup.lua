@@ -1,4 +1,4 @@
-os.loadAPI("/mode.lua")
+os.loadAPI("/APIs/QuioAPI.lua")
 
 os.fadeout = function(time)
   term.setBackgroundColor(colors.white)
@@ -122,7 +122,7 @@ while requesting do
   if event == "http_failure" then
     term.clear()
     term.setCursorPos(1, 2)
-    centerText("Internet Connect failed. Offline mode boot.")
+    QuioAPI.error("Internet Connect failed.")
     sleep(1)
     os.setofflinemode(true)
     requesting = false
