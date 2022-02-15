@@ -1,5 +1,5 @@
 -- Declerations --
-local InstallDirectory = "/Apps/"
+local InstallDirectory = "/home/." .. os.getuser() .. "/Apps/"
 
 -- images have to be 14 wide and 7 high
 
