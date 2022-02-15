@@ -5,4 +5,5 @@ shell.run("wget https://raw.githubusercontent.com/kazu55/QuioShell/master/QuioSh
 shell.run("wget https://raw.githubusercontent.com/kazu55/QuioShell/master/startup.lua")
 shell.run("wget https://raw.githubusercontent.com/kazu55/QuioShell/master/hometab.lua")
 shell.run("wget https://raw.githubusercontent.com/kazu55/QuioShell/master/iconlauncher.lua")
+shell.run("wget https://raw.githubusercontent.com/kazu55/QuioShell/master/adduser.lua")
 shell.run("reboot")
