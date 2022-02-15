@@ -16,4 +16,5 @@ shell.run("wget https://raw.githubusercontent.com/kazu55/QuioShell/master/adduse
 shell.run("wget https://raw.githubusercontent.com/kazu55/QuioShell/master/APIs/QuioAPI.lua /APIs/QuioAPI.lua")
 shell.run("wget https://raw.githubusercontent.com/kazu55/QuioShell/master/APIs/QuioWindow.pic /APIs/QuioWindow.pic")
 shell.run("wget https://raw.githubusercontent.com/kazu55/QuioShell/master/APIs/err.pic /APIs/err.pic")
+shell.run("wget https://raw.githubusercontent.com/kazu55/QuioShell/master/startup.pic /startup.pic")
 shell.run("reboot")
