@@ -25,8 +25,8 @@ os.getofflinemode = function()
 end
 
 error = function(err)
-    window = paintutils.loadImage("/APIs/QuioWindow.pic")
-    errorpic = paintutils.loadImage("/APIs/err.pic", 1, 1)
+    window = paintutils.loadImage("/APIs/QuioWindow.ico")
+    errorpic = paintutils.loadImage("/APIs/err.ico", 1, 1)
     for i = 6, 13 do
         term.setCursorPos(1, i)
         term.clearLine()
