@@ -1,3 +1,5 @@
+os.loadAPI("/mode.lua")
+
 os.fadeout = function(time)
   term.setBackgroundColor(colors.white)
   term.clear()
@@ -78,12 +80,62 @@ os.shutdown = function()
     coroutine.yield()
   end
 end
+term.clear()
+os.fadeIn(0.05)
+term.setTextColor(colors.black)
+os.setofflinemode(false)
+
+--QUIO
+QUIO = paintutils.loadImage("/startup.ico")
+
+for i = -5, 1 do
+    paintutils.drawImage(QUIO, i, i)
+    if i < -3 then
+        sleep(0.1)
+        term.setBackgroundColor(colors.white)
+        term.clear()
+    elseif i < 0 then
+        sleep(0.15)
+        term.setBackgroundColor(colors.white)
+        term.clear()
+    elseif i == 1 then
+        sleep(1)
+        term.setBackgroundColor(colors.white)
+        term.clear()
+    else
+        sleep(0.2)
+        term.setBackgroundColor(colors.white)
+        term.clear()
+    end
+    sleep(0)
+end
+term.setBackgroundColor(colors.white)
+term.clear()
+term.setCursorPos(1, 1)
+
+http.request("http://google.com")
+
+local requesting = true
+
+while requesting do
+  local event, url, sourceText = os.pullEvent()
+  if event == "http_failure" then
+    term.clear()
+    term.setCursorPos(1, 2)
+    centerText("Internet Connect failed. Offline mode boot.")
+    sleep(1)
+    os.setofflinemode(true)
+    requesting = false
+  end
+  requesting = false
+end
+
+
 
 if fs.exists("/home") then
   term.clear()
-  sleep(1)
   while true do
-    shell.run("/QuioLogin.lua")
+    shell.run("/Quiologin.lua")
   end
 else
   term.clear()
@@ -142,11 +194,11 @@ else
   sleep(3)
   term.clear()
   term.setCursorPos(1,1)
-  centerText("Connect to example.com and download it.")
+  centerText("Connect to internet. Please wait.")
   sleep(3)
    	
 
-  http.request("http://example.com")
+  http.request("http://google.com")
 
   local requesting = true
 
@@ -158,6 +210,11 @@ else
       term.setCursorPos(1, 1)
       centerText("Setup is complete. Restarting...")
       sleep(1)
+      shell.run("wget https://raw.githubusercontent.com/kazu55/QuioShell/master/Apps/missing.ico /home/." .. user .. "/Apps/missing.ico")
+      shell.run("wget https://raw.githubusercontent.com/kazu55/QuioShell/master/Apps/Power.lua /home/." .. user .. "/Apps/Power.lua")
+      shell.run("wget https://raw.githubusercontent.com/kazu55/QuioShell/master/Apps/Power.lua.ico /home/." .. user .. "/Apps/Power.lua.ico")
+      shell.run("wget https://raw.githubusercontent.com/kazu55/QuioShell/master/Apps/QuioShell.lua.ico /home/." .. user .. "/Apps/QuioShell.lua.ico")
+      shell.run("wget https://raw.githubusercontent.com/kazu55/QuioShell/master/Apps/QuioShell.lua /home/." .. user .. "/Apps/QuioShell.lua")
       os.reboot()
 
       requesting = false
