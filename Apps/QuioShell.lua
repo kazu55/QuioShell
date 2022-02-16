@@ -6,7 +6,7 @@ if os.getofflinemode() then
 end
 while true do
     if shell.dir() == "" then
-        write("/:~$ ")
+        write("/: ")
         cmd = read()
         if cmd == "shutdown" then
             printError("No such program")
@@ -20,7 +20,7 @@ while true do
             shell.run(cmd)
         end
     else
-        write(shell.dir() .. ":~$ ")
+        write(shell.dir() .. ": ")
         cmd = read()
         if cmd == "shutdown" then
             printError("No such program")
