@@ -1,4 +1,4 @@
-local buildID = 4112
+local buildID = 4120
 term.clear()
 shell.run("wget https://raw.githubusercontent.com/kazu55/QuioShell/master/buildID.txt")
 local file = fs.open("buildID.txt", "r")
@@ -14,12 +14,12 @@ if tonumber(data) > buildID then
   shell.run("rm /iconlauncher.lua")
   shell.run("rm /mode.lua")
   shell.run("rm /APIs/*")
-  shell.run("wget https://raw.githubusercontent.com/kazu55/QuioShell/master/Quiologin.lua")
-  shell.run("wget https://raw.githubusercontent.com/kazu55/QuioShell/master/update.lua")
-  shell.run("wget https://raw.githubusercontent.com/kazu55/QuioShell/master/QuioShell.lua")
+  shell.run("wget https://raw.githubusercontent.com/kazu55/QuioShell/master/Quiologin.lua /System/Programs/Quiologin.lua")
+  shell.run("wget https://raw.githubusercontent.com/kazu55/QuioShell/master/update.lua /System/Programs/update.lua")
+  shell.run("wget https://raw.githubusercontent.com/kazu55/QuioShell/master/QuioShell.lua /System/Programs/QuioShell.lua")
   shell.run("wget https://raw.githubusercontent.com/kazu55/QuioShell/master/startup.lua")
-  shell.run("wget https://raw.githubusercontent.com/kazu55/QuioShell/master/iconlauncher.lua")
-  shell.run("wget https://raw.githubusercontent.com/kazu55/QuioShell/master/adduser.lua")
+  shell.run("wget https://raw.githubusercontent.com/kazu55/QuioShell/master/iconlauncher.lua /System/Programs/iconlauncher.lua")
+  shell.run("wget https://raw.githubusercontent.com/kazu55/QuioShell/master/adduser.lua /System/Programs/adduser.lua")
   shell.run("wget https://raw.githubusercontent.com/kazu55/QuioShell/master/APIs/QuioAPI.lua")
   shell.run("wget https://raw.githubusercontent.com/kazu55/QuioShell/master/APIs/QuioWindow.pic")
   shell.run("wget https://raw.githubusercontent.com/kazu55/QuioShell/master/APIs/err.pic")
