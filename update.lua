@@ -5,7 +5,7 @@ local file = fs.open("buildID.txt", "r")
 local data = file.readAll()
 
 if tonumber(data) > buildID then
-  os.set
+  os.setsuperaccess(true)
   print("Updating... Please Wait...")
   shell.run("rm /Quiologin.lua")
   shell.run("rm /QuioShell.lua")
