@@ -1,4 +1,6 @@
 os.loadAPI("/APIs/QuioAPI.lua")
+local SystemDir = "/System/"
+
 
 os.fadeout = function(time)
   term.setBackgroundColor(colors.white)
@@ -87,32 +89,13 @@ os.setofflinemode(false)
 
 --QUIO
 QUIO = paintutils.loadImage("/startup.ico")
+term.setCursorPos(1,2)
+term.setBackgroundColor(colors.blue)
+centerText("QuioSystem")
 
-for i = -5, 1 do
-    paintutils.drawImage(QUIO, i, i)
-    if i < -3 then
-        sleep(0.1)
-        term.setBackgroundColor(colors.white)
-        term.clear()
-    elseif i < 0 then
-        sleep(0.15)
-        term.setBackgroundColor(colors.white)
-        term.clear()
-    elseif i == 1 then
-        sleep(1)
-        term.setBackgroundColor(colors.white)
-        term.clear()
-    else
-        sleep(0.2)
-        term.setBackgroundColor(colors.white)
-        term.clear()
-    end
-    sleep(0)
-end
 term.setBackgroundColor(colors.white)
-term.clear()
-term.setCursorPos(1, 1)
-
+term.setCursorPos(1,1)
+write(".")
 http.request("http://google.com")
 
 local requesting = true
@@ -122,20 +105,81 @@ while requesting do
   if event == "http_failure" then
     term.clear()
     term.setCursorPos(1, 2)
-    QuioAPI.error("Internet Connect failed.")
+    QuioAPI.error("Internet Connect is failed.")
     sleep(1)
     os.setofflinemode(true)
+    http.checkURL = function()
+      QuioAPI.notice("Sorry. HTTP API is not available.")
+      term.setBackgroundColor(colors.black)
+      term.setTextColor(colors.white)
+      term.clear()
+      term.setCursorPos(1, 1)
+    end
+    http.request = function()
+      QuioAPI.notice("Sorry. HTTP API is not available.")
+      term.setBackgroundColor(colors.black)
+      term.setTextColor(colors.white)
+      term.clear()
+      term.setCursorPos(1, 1)
+    end
+    http.post = function()
+      QuioAPI.notice("Sorry. HTTP API is not available.")
+      term.setBackgroundColor(colors.black)
+      term.setTextColor(colors.white)
+      term.clear()
+      term.setCursorPos(1, 1)
+    end
+    http.put = function()
+      QuioAPI.notice("Sorry. HTTP API is not available.")
+      term.setBackgroundColor(colors.black)
+      term.setTextColor(colors.white)
+      term.clear()
+      term.setCursorPos(1, 1)
+    end
+    http.websocket = function()
+      QuioAPI.notice("Sorry. HTTP API is not available.")
+      term.setBackgroundColor(colors.black)
+      term.setTextColor(colors.white)
+      term.clear()
+      term.setCursorPos(1, 1)
+    end
+    http.get = function()
+      QuioAPI.notice("Sorry. HTTP API is not available.")
+      term.setBackgroundColor(colors.black)
+      term.setTextColor(colors.white)
+      term.clear()
+      term.setCursorPos(1, 1)
+    end
+    term.setCursorPos(1,1)
     requesting = false
   end
   requesting = false
 end
+term.setCursorPos(1,1)
+write(".")
 
+delete = fs.delete
 
+fs.delete = function(file)
+  if string.find(file, "System") or string.find(file, "startup") then
+    QuioAPI.error("file not deleted. Reason: Access Denied")
+    term.setBackgroundColor(colors.black)
+    term.setTextColor(colors.white)
+    term.clear()
+  else
+    delete(file)
+  end
+end
+term.setCursorPos(1,1)
+write(".")
+
+term.clear()
+term.setCursorPos(1, 1)
 
 if fs.exists("/home") then
   term.clear()
   while true do
-    shell.run("/Quiologin.lua")
+    shell.run(SystemDir .. "/Programs/Quiologin.lua")
     sleep(1)
   end
 else
