@@ -39,3 +39,10 @@ error = function(err)
     print(err)
     os.pullEvent("key")
 end
+
+os.setsuperaccess = function(access)
+    superaccess = access
+end
+os.getsuperaccess = function()
+    return superaccess
+end
