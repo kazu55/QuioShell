@@ -27,7 +27,7 @@ end
 error = function(err)
     window = paintutils.loadImage("/APIs/QuioWindow.pic")
     errorpic = paintutils.loadImage("/APIs/err.pic", 1, 1)
-    for i = 6, 13 do
+    for i = 6, 12 do
         term.setCursorPos(1, i)
         term.clearLine()
     end
@@ -37,6 +37,38 @@ error = function(err)
     term.setBackgroundColor(colors.white)
     term.setTextColor(colors.black)
     print(err)
+    os.pullEvent("key")
+end
+
+info = function(info)
+    window = paintutils.loadImage("/APIs/QuioWindow.pic")
+    infopic = paintutils.loadImage("/APIs/info.pic", 1, 1)
+    for i = 6, 12 do
+        term.setCursorPos(1, i)
+        term.clearLine()
+    end
+    paintutils.drawImage(window, 1, 1)
+    paintutils.drawImage(infopic, 1, 1)
+    term.setCursorPos(9, 8)
+    term.setBackgroundColor(colors.white)
+    term.setTextColor(colors.black)
+    print(info)
+    os.pullEvent("key")
+end
+
+warn = function(warn)
+    window = paintutils.loadImage("/APIs/QuioWindow.pic")
+    warnpic = paintutils.loadImage("/APIs/warn.pic", 1, 1)
+    for i = 6, 12 do
+        term.setCursorPos(1, i)
+        term.clearLine()
+    end
+    paintutils.drawImage(window, 1, 1)
+    paintutils.drawImage(warnpic, 1, 1)
+    term.setCursorPos(9, 8)
+    term.setBackgroundColor(colors.white)
+    term.setTextColor(colors.black)
+    print(info)
     os.pullEvent("key")
 end
 
