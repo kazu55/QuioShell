@@ -8,5 +8,6 @@
   shell.run("wget https://raw.githubusercontent.com/kazu55/QuioShell/master/APIs/QuioAPI.lua /APIs/QuioAPI.lua")
   shell.run("wget https://raw.githubusercontent.com/kazu55/QuioShell/master/APIs/QuioWindow.pic /APIs/QuioWindow.pic")
   shell.run("wget https://raw.githubusercontent.com/kazu55/QuioShell/master/APIs/err.pic /APIs/err.pic")
-  shell.run("wget https://raw.githubusercontent.com/kazu55/QuioShell/master/APIs/info.pic /APIs/info.pic")
+  shell.run("wget https://raw.githubusercontent.com/kazu55/QuioShell/master/info.pic /APIs/info.pic")
+  shell.run("wget https://raw.githubusercontent.com/kazu55/QuioShell/master/warn.pic /APIs/warn.pic")
   shell.run("reboot")
