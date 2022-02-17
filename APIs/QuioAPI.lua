@@ -68,7 +68,7 @@ warn = function(warn)
     term.setCursorPos(9, 8)
     term.setBackgroundColor(colors.white)
     term.setTextColor(colors.black)
-    print(info)
+    print(warn)
     os.pullEvent("key")
 end
 
