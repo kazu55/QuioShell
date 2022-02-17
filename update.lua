@@ -1,4 +1,4 @@
-local buildID = 4120
+local buildID = 4121
 term.clear()
 shell.run("wget https://raw.githubusercontent.com/kazu55/QuioShell/master/buildID.txt")
 local file = fs.open("buildID.txt", "r")
@@ -24,7 +24,8 @@ if tonumber(data) > buildID then
   shell.run("wget https://raw.githubusercontent.com/kazu55/QuioShell/master/APIs/QuioAPI.lua /APIs/QuioAPI.lua")
   shell.run("wget https://raw.githubusercontent.com/kazu55/QuioShell/master/APIs/QuioWindow.pic /APIs/QuioWindow.pic")
   shell.run("wget https://raw.githubusercontent.com/kazu55/QuioShell/master/APIs/err.pic /APIs/err.pic")
-  shell.run("wget https://raw.githubusercontent.com/kazu55/QuioShell/master/APIs/info.pic /APIs/info.pic")
+  shell.run("wget https://raw.githubusercontent.com/kazu55/QuioShell/master/info.pic /APIs/info.pic")
+  shell.run("wget https://raw.githubusercontent.com/kazu55/QuioShell/master/warn.pic /APIs/warn.pic")
   shell.run("rm buildID.txt")
   shell.run("reboot")
 else
