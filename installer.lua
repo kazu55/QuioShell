@@ -286,6 +286,9 @@ write(\".\")\
 os.setsuperaccess(false)\
 if fs.exists(\"/home\") then\
   print(\"Starting startup programs...\")\
+  if not fs.exists(\"/System/startup/\") then\
+    fs.makeDir(\"/System/startup/\")\
+  end\
   local startup = fs.list(\"/System/startup/\")\
   for i = 1, #startup do\
     print(\"Starting \" .. startup[i])\
